@@ -22,3 +22,6 @@ class products(models.Model):
 	created_at = models.DateField(auto_now_add=True)
 	owner = models.ForeignKey(User,default=None,on_delete=models.CASCADE)#for now to pass form validation,will remove later
 	
+
+	def __str__(self):
+		return self.pname

@@ -391,8 +391,7 @@ def viewwishlist(request):
 def product(request):
 	pid = request.GET['id']
 	product=products.objects.filter(id=pid)
-	for pro in product:
-		type=pro.ptype
+	for pro in product: type=pro.ptype
 	rproduct=products.objects.filter(ptype=type,isactive=True).exclude(id = pid)[:4]
 	buyed = False
 	tstar=0
